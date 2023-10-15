@@ -18,10 +18,9 @@ video {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  color: #fff;
   font-size: 36px;
   font-family: "Yellowtail", cursive;
-  color: #ff69b4;
+  color: #f401c7;
 }
 .bottom {
   position: absolute;
@@ -29,6 +28,5 @@ video {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  color: #fff;
   font-size: 36px;
 }
