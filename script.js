@@ -2,32 +2,60 @@
 const clientId = "708e2490bd4b4115b044bbc0858a9288";
 const clientSecret = "1751ed1f533e43c98d8eb6b7bf21d2fc";
 
-// Authenticate with Spotify using OAuth 2.0 (you'll need to implement this)
-
-// Use the artist ID to get their top tracks or albums
+// Specify the artist's ID
 const artistId = "4kW5tzPanapA9sFFMEueNn";
 const artistTracksEndpoint = `https://api.spotify.com/v1/artists/${artistId}/top-tracks`;
 
-// Make a GET request to get the artist's top tracks
-fetch(artistTracksEndpoint, {
-  method: "GET",
+// Specify your application's Redirect URI
+const redirectUri = "https://barnardmusic.netlify.app/";
+
+// Create a link to Spotify's authorization endpoint
+const authorizeUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=user-read-private%20user-read-email&state=your_state_string`;
+
+// Open the authorization URL in a new window or a pop-up to allow the user to log in and authorize your app
+window.open(authorizeUrl, "_blank");
+
+// After the user authorizes your app and is redirected back with an authorization code, extract it from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const authorizationCode = urlParams.get("code");
+
+// Send a POST request to the token endpoint to obtain the access token
+fetch("https://accounts.spotify.com/api/token", {
+  method: "POST",
+  body: `grant_type=authorization_code&code=${authorizationCode}&redirect_uri=${redirectUri}`,
   headers: {
-    Authorization: `Bearer ${YOUR_ACCESS_TOKEN}`, // Include your access token here
+    Authorization: `Basic ${btoa(`${clientId}:${clientSecret}`)}`,
+    "Content-Type": "application/x-www-form-urlencoded",
   },
 })
   .then((response) => response.json())
   .then((data) => {
-    // Handle the data to extract the list of songs
-    const songs = data.tracks;
-    console.log(songs);
+    const accessToken = data.access_token;
+
+    // Use the access token to make API requests to Spotify
+    const artistTracksEndpoint = `https://api.spotify.com/v1/artists/${artistId}/top-tracks`;
+
+    fetch(artistTracksEndpoint, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the data to extract the list of songs
+        const songs = data.tracks;
+        console.log(songs);
+
+        // Create and display the list of songs on your webpage
+        const songList = document.getElementById("songList");
+
+        songs.forEach((song) => {
+          const listItem = document.createElement("li");
+          listItem.textContent = song.name;
+          songList.appendChild(listItem);
+        });
+      })
+      .catch((error) => console.error(error));
   })
   .catch((error) => console.error(error));
-
-const songs = ["Song 1", "Song 2", "Song 3"]; // Replace with fetched data
-const songList = document.getElementById("songList");
-
-songs.forEach((song) => {
-  const listItem = document.createElement("li");
-  listItem.textContent = song;
-  songList.appendChild(listItem);
-});
