@@ -14,13 +14,16 @@ video {
 }
 .centeredHeading {
   position: absolute;
-  top: 40%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  font-size: 36px;
+  font-size: 40px;
   font-family: "Yellowtail", cursive;
   color: #f401c7;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding-left: 40%;
+  padding-right: 40%;
 }
 .bottom {
   position: absolute;
