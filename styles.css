@@ -21,7 +21,16 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1; /* Ensures the text is above the video */
-  color: #fff; /* Text color */
-  font-size: 36px; /* Adjust the font size as needed */
+  z-index: 1;
+  color: #fff;
+  font-size: 36px;
+}
+.bottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  color: #fff;
+  font-size: 36px;
 }
