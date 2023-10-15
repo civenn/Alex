@@ -7,7 +7,7 @@ const artistId = "4kW5tzPanapA9sFFMEueNn";
 const artistTracksEndpoint = `https://api.spotify.com/v1/artists/${artistId}/top-tracks`;
 
 // Specify your application's Redirect URI
-const redirectUri = "https://barnardmusic.netlify.app/";
+const redirectUri = "https://barnardmusic.netlify.app/callback";
 
 // Create a link to Spotify's authorization endpoint
 const authorizeUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=user-read-private%20user-read-email&state=your_state_string`;
