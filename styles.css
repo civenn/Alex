@@ -13,7 +13,7 @@ video {
   overflow: hidden; /* Ensure the video doesn't overflow the container */
 }
 .content {
-  margin-top: 2%;
+  margin-top: 5%;
   top: 0;
   left: 0;
   width: 100%;
