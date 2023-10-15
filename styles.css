@@ -16,7 +16,7 @@ h1 {
   height: 100vh;
   overflow: hidden; /* Ensure the video doesn't overflow the container */
 }
-.centered {
+.container {
   position: absolute;
   top: 0;
   left: 0;
