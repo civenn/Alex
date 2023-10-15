@@ -20,7 +20,7 @@ video {
   z-index: 1;
   font-size: 40px;
   font-family: "Yellowtail", cursive;
-  color: #f401c7;
+  color: #ffffff;
   background-color: rgba(0, 0, 0, 0.2);
   padding-left: 40%;
   padding-right: 40%;
@@ -32,4 +32,8 @@ video {
   transform: translateX(-50%);
   z-index: 1;
   font-size: 36px;
+}
+#expandable-section {
+  display: none; /* Initially hide the section */
+  /* Other styles for the section */
 }
