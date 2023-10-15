@@ -1,7 +1,3 @@
-h1 {
-  font-family: "Yellowtail", cursive;
-  color: #ff69b4;
-}
 video {
   position: absolute;
   top: 0;
@@ -16,12 +12,17 @@ video {
   height: 100vh;
   overflow: hidden; /* Ensure the video doesn't overflow the container */
 }
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1; /* Ensures the text is above the video */
-  color: #fff; /* Text color */
-  font-size: 36px; /* Adjust the font size as needed */
+.content {
+  top: 20%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+.content h1 {
+  font-family: "Yellowtail", cursive;
+  color: #ff69b4;
 }
