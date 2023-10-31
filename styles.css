@@ -1,50 +1,78 @@
-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+body {
+  font-family: "poppins", sans-serif;
+  background-color: #272044;
+}
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+    url("./images/pexels-edvin-richardson-796206.jpg ");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  text-align: center;
+  padding: 260px 0;
+}
+h1 {
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 1.5;
+  margin: 0;
+}
+h2 {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.5;
+  margin: 0;
+}
+h3 {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: 5px;
+  margin: 0;
+}
+header a {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  color: #272044;
+  padding: 16px 32px;
+  margin-top: 32px;
+  display: inline-block;
+  letter-spacing: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: white;
 }
 iframe {
   width: 50%;
   max-width: 800px;
   height: 50vh;
-  z-index: 1;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   padding-top: 10px;
 }
-.video-background {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
 }
-.centeredHeading {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  font-size: 40px;
-  font-family: "Yellowtail", cursive;
-  color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.2);
-  padding-left: 40%;
-  padding-right: 40%;
-}
-.bottom {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  font-size: 36px;
-}
+
 #expandable-section {
   display: none; /* Initially hide the section */
   /* Other styles for the section */
+}
+@media (max-width: 900px) {
+  header {
+    padding: 60px 0;
+  }
+
+  header h1 {
+    font-size: 48px;
+  }
+
+  header h2 {
+    font-size: 20px;
+  }
+
+  header h3 {
+    font-size: 12px;
+  }
 }
