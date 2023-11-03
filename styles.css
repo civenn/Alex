@@ -44,6 +44,9 @@ header a {
   text-transform: uppercase;
   background: white;
 }
+section {
+  padding-top: 100px;
+}
 iframe {
   width: 50%;
   max-width: 800px;
@@ -90,6 +93,9 @@ footer a {
 .container {
   max-width: 1400px;
   margin: 0 auto;
+}
+.compositions-grid-2-col {
+  grid-template-columns: 1fr 1fr;
 }
 .grid {
   display: grid;
